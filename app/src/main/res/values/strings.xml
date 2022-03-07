@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Quản lý nhân viên</string>
+    <string name="menunew">Thêm mới</string>
+    <string name="menuedit">Chỉnh sửa</string>
+    <string name="menudelete">Xoá</string>
+    <string name="titlelist">Danh sách nhân viên</string>
+    <string name="title_activity_new">Thêm mới nhân viên</string>
+    <string name="employeeCode">Mã nhân viên</string>
+    <string name="EmployeeName">Tên nhân viên</string>
+    <string name="SaveButton">Lưu</string>
+    <string name="title_activity_edit">Chỉnh sửa nhân viên</string>
+</resources>
