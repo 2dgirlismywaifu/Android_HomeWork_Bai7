@@ -7,9 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int SAVE_NEW_EMPLOYEE = 115;
     public static final int SAVE_EDIT_EMPLOYEE = 116;
     ListView lv;
-    int posselect ;
+    int posselect = 0 ;
     ArrayList<Person> list = new ArrayList<>();
     ArrayAdapter<Person> adapter=null;
 
@@ -56,15 +54,16 @@ public class MainActivity extends AppCompatActivity {
         lv = findViewById(R.id.ListEmployee);
         adapter = new ArrayAdapter<Person>
                 (this, android.R.layout.simple_list_item_1, list);
-        lv.setAdapter((ListAdapter) adapter);
-        lv.setOnItemClickListener(
-                (AdapterView.OnItemClickListener) this::onItemClick);
+        lv.setAdapter(adapter);
+        lv.setOnItemLongClickListener((arg0, arg1, arg2, arg3) -> {
+            posselect = arg2;
+            return false;
+        });
+
         registerForContextMenu(lv);
 
     }
-    private void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-        posselect = arg2;
-    }
+
 
 
 
